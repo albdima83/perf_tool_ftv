@@ -1,11 +1,17 @@
 import { exec } from "child_process";
+import dotenv from "dotenv";
 import * as fs from "fs";
 import readline from "node:readline";
 /**
+ * Load env variables
+ */
+dotenv.config();
+
+/**
  * PACKAGE APP AND MAIN ACTIVITY
  */
-const PACKAGE = "it.mediaset.infinitytv1";
-const MAIN_ACTIVITY = "it.mediaset.mediasetplay.ctv.MainActivity";
+const PACKAGE = process.env.PACKAGE;
+const MAIN_ACTIVITY = process.env.MAIN_ACTIVITY;
 const LAUNCH_APPLICATION = `${PACKAGE}/${MAIN_ACTIVITY}`;
 
 /**
@@ -40,7 +46,9 @@ const LINE_SEPARATOR = "\n";
 /**
  * NUMBER ITERACTIONS to capture data
  */
-const NUMBER_OF_ITERACTION = 50;
+const NUMBER_OF_ITERACTION = process.env.NUMBER_OF_ITERACTION
+	? parseInt(process.env.NUMBER_OF_ITERACTION)
+	: 50;
 
 /**
  * Interfaces
@@ -318,6 +326,11 @@ function writeRowData(fileName: string, arrayData: Array<unknown>) {
  */
 async function main() {
 	let device = null;
+	if (!PACKAGE || !MAIN_ACTIVITY) {
+		printLog("Please set configuration on .env file");
+		printLog("Follow 'Setup' on Readme.md");
+		return;
+	}
 	//retrieve a list of all devices connected by adb
 	const devices = await getDeviceList();
 	if (devices.length === 0) {

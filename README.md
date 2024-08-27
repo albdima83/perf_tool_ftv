@@ -4,6 +4,13 @@ The project is a tool to measure time performance for Firetv app.
 
 ## Setup
 
+Set app information in `.env` file
+
+```shell
+PACKAGE="{your package id}"
+MAIN_ACTIVITY="{your main activity path}"
+```
+
 Install the right node version. See [./nvmrc] to understand the right version. Usually we use [nvm](https://github.com/nvm-sh/nvm).
 
 ```shell
