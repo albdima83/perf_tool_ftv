@@ -370,6 +370,8 @@ async function main() {
 	for (let i = 0; i < NUMBER_OF_ITERACTIONS; i++) {
 		//stop all applications
 		await clearRunningApps(device, appRunningSearch);
+		//wait 10 secs to start application
+		await sleep(10 * 1000);
 		//clear all logcat
 		await clearLogcat(device);
 		await launchActivity(device);
