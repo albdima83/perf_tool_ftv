@@ -4,7 +4,7 @@ The project is a tool to measure time performance for Firetv app.
 
 ## Setup
 
-Set app information in `.env` file
+Set variables in `.env` file
 
 ```shell
 PACKAGE="{your package id}"
