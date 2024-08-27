@@ -27,7 +27,7 @@ Connect to device to measure perf.
 Please follow this [guide](https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device.html)
 
 ```shell
-adb connect {ip:5555}
+adb connect {device_ip}:5555
 ```
 
 ### Build script

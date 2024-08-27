@@ -53,7 +53,6 @@ const NUMBER_OF_ITERACTION = process.env.NUMBER_OF_ITERACTION
 /**
  * Interfaces
  */
-
 interface DeviceInfo {
 	model: string;
 	serialNumber: string;
