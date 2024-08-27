@@ -1,6 +1,9 @@
 # perf_tool_ftv
 
-The project is a tool to measure time performance for Firetv app.
+The project is a tool to measure time performance for Firetv app based on these guides:
+
+- [app-performance-scripts](https://developer.amazon.com/docs/app-testing/app-performance-scripts.html)
+- [test-criteria](https://developer.amazon.com/docs/app-testing/test-criteria.html)
 
 ## Setup
 
@@ -30,14 +33,19 @@ Please follow this [guide](https://developer.amazon.com/docs/fire-tv/connecting-
 adb connect {device_ip}:5555
 ```
 
-### Build script
+## Build script
 
 ```shell
 pnpm build
 ```
 
-### Run script
+## Run script
 
 ```shell
 pnpm start
 ```
+
+## Features
+
+- [ ] [Warm Iterations](https://developer.amazon.com/docs/app-testing/app-performance-scripts.html#warm-iterations)
+- [ ] [Memory KPI](https://developer.amazon.com/docs/app-testing/app-performance-scripts.html#memory-kpi)
