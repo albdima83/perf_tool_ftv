@@ -46,8 +46,8 @@ const LINE_SEPARATOR = "\n";
 /**
  * NUMBER ITERACTIONS to capture data
  */
-const NUMBER_OF_ITERACTION = process.env.NUMBER_OF_ITERACTION
-	? parseInt(process.env.NUMBER_OF_ITERACTION)
+const NUMBER_OF_ITERACTIONS = process.env.NUMBER_OF_ITERACTIONS
+	? parseInt(process.env.NUMBER_OF_ITERACTIONS)
 	: 50;
 
 /**
@@ -367,7 +367,7 @@ async function main() {
 	//write header table
 	writeRowData(logFile, ["TIME", "TIME LOG LINE", "DISPLAYED APP LINE", "FULLY DRAWN LINE"]);
 	let avgTime = 0;
-	for (let i = 0; i < NUMBER_OF_ITERACTION; i++) {
+	for (let i = 0; i < NUMBER_OF_ITERACTIONS; i++) {
 		//stop all applications
 		await clearRunningApps(device, appRunningSearch);
 		//clear all logcat
@@ -407,7 +407,7 @@ async function main() {
 		//wait 10 secs to re-iterate
 		await sleep(10 * 1000);
 	}
-	avgTime = avgTime / NUMBER_OF_ITERACTION;
+	avgTime = avgTime / NUMBER_OF_ITERACTIONS;
 	writeRowData(logFile, ["AVG_TIME", avgTime]);
 	printLog("Successfully completed!!!");
 }
